@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu04.html</title>
+</head>
+<body>
+    <Script>
+        document.write("<h2>document.write()로 표 만들기</h2>");
+
+        var str = "";
+        /*
+        더블이나 싱글 쿼테이션이 겹치면 에러가 발생하므로 둘 중 하나만
+        사용하거나, 이스케이프 시퀀스를 통해 특수기호임을 알려줘야 한다.
+        */
+        str += "<table border=\"1\">";
+        str += "<tr>";
+        str += "<td>n</td>";
+            for(i=0; i<=9; i++){
+                str += "<td>"+i+"</td>";
+            }
+        str += "</tr>";
+
+        str += "<tr>";
+        str += "<td>n<sup>2</sup></td>";
+            for(i=0; i<=9; i++){
+                str += "<td>"+(i*i)+"</td>";
+            }
+        str += "</tr>";
+        str += "</table>";  
+        
+        document.write(str);
+    </Script>
+
+    
+</body>
+</html>
