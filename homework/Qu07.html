@@ -8,9 +8,8 @@
 </head>
 <body>
     <Script>
-        function big(num1, num2){ 
-           
-            if(num1>num2){
+        function big(num1, num2){      
+            if(parseInt(num1)>parseInt(num2)){
                 return num1;
             }
             else{
@@ -18,8 +17,22 @@
             }
         }
 
+        //무기명함수로 작성
+        var big2 = function(num1, num2){
+            //삼항연산자를 이용해보기 
+            //(조건) ? 참 : 거짓 ;
+            var result = 
+                (parseInt(num1)>parseInt(num2)) ? num1 : num2 ;
+            return result;
+        }
+    </Script>
+    <script>
         var b=big("625", "555");
         document.write("큰수=", b);
-    </Script>
+
+        //무기명 함수를 이용한 결과 보기
+        var b2=big2("444", "555");
+        document.write("<br>큰수=", b2);
+    </script>
 </body>
 </html>

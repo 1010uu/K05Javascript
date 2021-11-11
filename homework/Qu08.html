@@ -9,13 +9,33 @@
 <body>
     <sCRipt>
         
+        //prompt를 통해 입력받으면 무조건 문자열로 반환됨.
+        var str = prompt("숫자를 입력하세요.", 0);
+        var num = parseInt(str);
+
         var lastNum = num % 10;//숫자의 마지막자리 구함
+        var firstNum = 0; // 숫자의 첫번째 자리 (0일수 없으므로 우선 초기화하는 용도)
         //숫자의 첫번째자리 구하기 위한 while문
-        while (반복조건) {
+        //사용자가 입력한 숫자에 따라 반복 횟수가 달라지므로 while문을 선택한다.
+        while(num>0){   //숫자가 0 이상일때까지 반복
+            //입력받은 숫자를 firstNum에 먼저 대입 (사용자의 입력이 1자리 일수도 있으므로!)
+            firstNum = num;
+            /*
+            Math.floor 소수점 이하를 버리기.
+                숫자를 10으로 나눈 후 소수점 이하를 버린다. 
+                1234/10 = 123.4 -> 소수점 이하 버림처리 -> 123
+                이런 방식으로 한자리씩 줄이고, 마지막에서 0.1을 버림처리 해서 0이 된다. 
+                이 때에 반복문을 탈출한다.
+            */
             num = Math.floor(num / 10);//Math.floor(5678/10) = 567
-}
+        }
 
-
+        if(firstNum==lastNum){
+            document.write(str+ "=>처음과 끝이 같음");
+        }
+        else{
+            document.write(str+ "=>처음과 끝이 다름");
+        }
     </sCRipt>
 </body>
 </html>
