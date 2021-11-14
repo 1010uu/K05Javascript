@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <style>
+    
+        table{
+            background-color: #dddddd;
+            border: 1px solid darkgray; border-radius: 10px;
+        }
+        *{
+            text-align: center; font-size: 20px; font-weight: bold;
+        }
+        .display{
+            width: 100%; 
+            background-color: #70c738;
+            border-radius: 10px; overflow: hidden;
+        }
+        div{
+            font-size: 2em;
+            text-align: right; 
+        }
+        button{
+            border:1px solid #dddddd; color:#ffffff;
+		    border-radius:10px;
+            width: 100%; height: 100%;
+        }
+        .btn1{
+            background-color:#7b7b7b; 
+        }
+        .btnNum{
+            background-color: #373737;
+        }
+        .btnArithmetic{
+            background-color:#fa960a;
+        }
+    </style>
+
+        
+    <script>
+  
+    // 숫자입력
+    function input(data){
+        var result = document.getElementsByTagName(getdate);
+        result += data;
+    }
+    //창에 띄우기
+    function showdata(){
+        var result = document.getElementsByTagName(getdate);
+        eval(result);
+    }
+        
+
+        
+    </script>
+</head>
+<body>
+    <h2 style="text-align: center;">계산기</h2>
+    <table align="center" width="420" height="370">
+      <colgroup>
+            <col width=25%>
+            <col width=25%>
+            <col width=25%>
+            <col width=25%>
+        </colgroup>
+        <!-- 출력창 -->
+        <tr>
+            <td colspan="4" class="display">
+                <div>123+456</div></td>
+        </tr>
+
+        <!-- 뒤로가기&C 버튼 btn1 -->
+        <tr>
+            <td colspan="2" >
+                <button class="btn1">BackSpace</button></td>
+            <td colspan="2" >
+                <button class="btn1">C</button></td>   
+        </tr>
+        <!-- 숫자버튼 btnNum -->
+        <tr>
+            <td ><button class="btnNum" onclick="getdate(1);">1</button></td>
+            <td ><button class="btnNum" onclick="getdate(2);">2</button></td>
+            <td ><button class="btnNum" onclick="getdate(3);">3</button></td>
+            <td ><button class="btnArithmetic" 
+                onclick="getdate('/');">/</button></td>
+        </tr>
+        <tr>
+            <td ><button class="btnNum" onclick="getdate(4);">4</button></td>
+            <td ><button class="btnNum" onclick="getdate(5);">5</button></td>
+            <td ><button class="btnNum" onclick="getdate(6);">6</button></td>
+            <td ><button  class="btnArithmetic" 
+                    onclick="getdate('*');">*</button></td>
+        </tr>
+        <tr>
+            <td ><button class="btnNum" onclick="getdate(7);">7</button></td>
+            <td ><button class="btnNum" onclick="getdate(8);">8</button></td>
+            <td ><button class="btnNum" onclick="getdate(9);">9</button></td>
+            <td ><button  class="btnArithmetic"
+                onclick="getdate('+');">+</button></td>
+        </tr>
+        <tr>
+            <td ><button class="btnNum" onclick="showdata();">=</button></td>
+            <td ><button class="btnNum" onclick="getdate(0);">0</button></td>
+            <td ><button class="btnNum" onclick="getdate('.');">.</button></td>
+            <td ><button class="btnArithmetic"
+                onclick="getdate('-');">-</button></td>
+        </tr>
+    </table>
+    
+</body>
+</html>
