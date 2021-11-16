@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qu24Star.html</title>
+    <script>
+        function printStr(num) {
+            var cnum = parseInt(num);
+        /*
+            매개변수로 전달된 값이 양의 정수이고 숫자인지 확인한다.
+        */
+            if(cnum<1 || isNaN(cnum)){
+                alert("입력 오류입니다.");
+                return;
+            }
+
+            //반복횟수
+            var totalCnt = cnum*2;
+            //별 출력을 위한 변수
+            var starCnt = 0;
+
+            //입력받은 수가 5라면 9번 반복이 됨. 따라서 10미만까지 반복.
+            for(i=1; i<totalCnt; i++){ //9줄
+                if(i<=cnum){
+                    //변수 i가 cnum이 될 때까지는 증가하면서 *출력
+                    starCnt = i;
+                    console.log("반복횟수", starCnt)
+                }
+                else{
+                    //cnum을 넘어가면 감소하면서 *출력
+                    starCnt= totalCnt-i;
+                    console.log("반복횟수", starCnt);                
+                }
+
+                //앞에서 계산한 starCnt만큼 *를 출력
+                while(starCnt>0){
+                    document.write("*");
+                    starCnt--;
+                }
+                //한행을 출력한 후 줄바꿈.
+                document.write("<br>");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h3>별 문자 출력하기</h3>
+    <hr>
+    <script>
+        var starCnt = prompt("양의 정수를 입력하세요");
+        printStr(starCnt);
+    </script>
+</body>
+</html>
