@@ -7,20 +7,33 @@
     <title>Qu16.html</title>
 
      <script>
-        function fnBorder1() {
+        function fnBorder(flag) {
+
+            if(flag==1){
             var spanTag = document.getElementById("mySpan");
             spanTag.style.border ="dotted 2px violet";
-        }
-        function fnBorder2() {
+            }
+            if(flag==2){
             var pTag = document.getElementById("myPara");
-            pTag.style.border ="double 3px gray";
+            //pTag.style.border ="double 3px gray";
+
+            //개별속성을 통해서 적용해보기
+            pTag.style.borderColor = "gray";
+            pTag.style.borderStyle = "double";
+            pTag.style.borderWidth = "3px";
+            }
         }
+        /*
+        var fnBorder = function(){
+            document.getElementById("myPara").style.border = ""double 3px gray";
+        }
+        */
      </script>
 </head>
 <body>
     <h3>자바스크립트란?
-    <input type="button" name="btn1" value="border" onclick="fnBorder1();"/>
-    <input type="button" name="btn2" value="P" onclick="fnBorder2();"/>
+    <input type="button" name="btn1" value="border" onclick="fnBorder(1);"/>
+    <input type="button" name="btn2" value="P" onclick="fnBorder(2);"/>
     </h3>
     <hr>
     <p id="myPara">자바스크립트는 웹 프로그래밍 언어로서 웹 페이지를 동적 변경시킬 수 있다.</p>
